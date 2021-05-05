@@ -16,7 +16,7 @@ def gen_demand(day_of_week, weather, location, size, event):
     result = ((1 + 0.2*size) * (1/(day_of_week%7+1)) * location) + weather + event*2
     return result
 
-with open("results-20210422-163404.csv") as csvfile:
+with open("weather_data.csv") as csvfile:
     list_of_days = []
     n = 1000
     data = csv.reader(csvfile, delimiter=',')
