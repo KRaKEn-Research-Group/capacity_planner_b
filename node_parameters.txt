@@ -1,0 +1,399 @@
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, medium_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([very_small, parking, medium_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([big, parking, medium_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([small, no_parking, medium_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([small, parking, low_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([small, parking, low_tourism]).
+----------------
+output([big, no_parking, medium_tourism]).
+----------------
+output([big, parking, high_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, high_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, medium_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([big, parking, medium_tourism]).
+----------------
+output([medium, parking, high_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([small, parking, low_tourism]).
+----------------
+output([small, no_parking, high_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([big, parking, medium_tourism]).
+----------------
+output([very_small, no_parking, high_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([very_small, parking, medium_tourism]).
+----------------
+output([small, parking, medium_tourism]).
+----------------
+output([very_small, no_parking, medium_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([very_small, no_parking, high_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([small, no_parking, high_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([very_small, no_parking, medium_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([very_small, parking, low_tourism]).
+----------------
+output([small, parking, high_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([small, no_parking, high_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([small, no_parking, medium_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([small, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([small, parking, low_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([small, parking, low_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([very_small, no_parking, high_tourism]).
+----------------
+output([medium, no_parking, medium_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([small, parking, high_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([small, parking, high_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([very_small, no_parking, medium_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, high_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([big, parking, high_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([very_big, parking, medium_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([small, no_parking, medium_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([very_big, parking, medium_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([small, no_parking, medium_tourism]).
+----------------
+output([small, no_parking, medium_tourism]).
+----------------
+output([very_small, parking, medium_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([small, no_parking, medium_tourism]).
+----------------
+output([very_small, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, no_parking, medium_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, no_parking, high_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([big, no_parking, low_tourism]).
+----------------
+output([small, no_parking, high_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, no_parking, high_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([big, parking, medium_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, parking, high_tourism]).
+----------------
+output([small, no_parking, high_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([big, parking, medium_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, parking, medium_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([small, no_parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([medium, no_parking, low_tourism]).
+----------------
+output([small, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, parking, low_tourism]).
+----------------
+output([very_big, parking, low_tourism]).
+----------------
+output([medium, parking, high_tourism]).
