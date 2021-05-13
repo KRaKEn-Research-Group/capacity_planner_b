@@ -12,40 +12,46 @@
 0.8::parking_spot ; 0.2::no_parking_spot :- store_size(big).
 1::parking_spot ; 0::no_parking_spot :- store_size(very_big).
 
-output([ very_small, parking, low_tourism]) :-  store_size(very_small), parking_spot, tourism(low).
-output([ very_small, no_parking, low_tourism]) :-  store_size(very_small), no_parking_spot, tourism(low).
-output([ very_small, parking, medium_tourism]) :-  store_size(very_small), parking_spot, tourism(medium).
-output([ very_small, no_parking, medium_tourism]) :-  store_size(very_small), no_parking_spot, tourism(medium).
-output([ very_small, parking, high_tourism]) :-  store_size(very_small), parking_spot, tourism(high).
-output([ very_small, no_parking, high_tourism]) :-  store_size(very_small), no_parking_spot, tourism(high).
+normal(500, 300)::customer_base :- store_size(very_small).
+normal(1000, 500)::customer_base :- store_size(small).
+normal(5000, 2500)::customer_base :- store_size(medium).
+normal(15000, 7000)::customer_base :- store_size(big).
+normal(30000, 10000)::customer_base :- store_size(very_big).
 
-output([ small, parking, low_tourism]) :-  store_size(small), parking_spot, tourism(low).
-output([ small, no_parking, low_tourism]) :-  store_size(small), no_parking_spot, tourism(low).
-output([ small, parking, medium_tourism]) :-  store_size(small), parking_spot, tourism(medium).
-output([ small, no_parking, medium_tourism]) :-  store_size(small), no_parking_spot, tourism(medium).
-output([ small, parking, high_tourism]) :-  store_size(small), parking_spot, tourism(high).
-output([ small, no_parking, high_tourism]) :-  store_size(small), no_parking_spot, tourism(high).
+output([ very_small, parking, low_tourism, CB]) :-  store_size(very_small), parking_spot, tourism(low), value(customer_base, CB).
+output([ very_small, no_parking, low_tourism, CB]) :-  store_size(very_small), no_parking_spot, tourism(low), value(customer_base, CB).
+output([ very_small, parking, medium_tourism, CB]) :-  store_size(very_small), parking_spot, tourism(medium), value(customer_base, CB).
+output([ very_small, no_parking, medium_tourism, CB]) :-  store_size(very_small), no_parking_spot, tourism(medium), value(customer_base, CB).
+output([ very_small, parking, high_tourism, CB]) :-  store_size(very_small), parking_spot, tourism(high), value(customer_base, CB).
+output([ very_small, no_parking, high_tourism, CB]) :-  store_size(very_small), no_parking_spot, tourism(high), value(customer_base, CB).
 
-output([ medium, parking, low_tourism]) :-  store_size(medium), parking_spot, tourism(low).
-output([ medium, no_parking, low_tourism]) :-  store_size(medium), no_parking_spot, tourism(low).
-output([ medium, parking, medium_tourism]) :-  store_size(medium), parking_spot, tourism(medium).
-output([ medium, no_parking, medium_tourism]) :-  store_size(medium), no_parking_spot, tourism(medium).
-output([ medium, parking, high_tourism]) :-  store_size(medium), parking_spot, tourism(high).
-output([ medium, no_parking, high_tourism]) :-  store_size(medium), no_parking_spot, tourism(high).
+output([ small, parking, low_tourism, CB]) :-  store_size(small), parking_spot, tourism(low), value(customer_base, CB).
+output([ small, no_parking, low_tourism, CB]) :-  store_size(small), no_parking_spot, tourism(low), value(customer_base, CB).
+output([ small, parking, medium_tourism, CB]) :-  store_size(small), parking_spot, tourism(medium), value(customer_base, CB).
+output([ small, no_parking, medium_tourism, CB]) :-  store_size(small), no_parking_spot, tourism(medium), value(customer_base, CB).
+output([ small, parking, high_tourism, CB]) :-  store_size(small), parking_spot, tourism(high), value(customer_base, CB).
+output([ small, no_parking, high_tourism, CB]) :-  store_size(small), no_parking_spot, tourism(high), value(customer_base, CB).
 
-output([ big, parking, low_tourism]) :-  store_size(big), parking_spot, tourism(low).
-output([ big, no_parking, low_tourism]) :-  store_size(big), no_parking_spot, tourism(low).
-output([ big, parking, medium_tourism]) :-  store_size(big), parking_spot, tourism(medium).
-output([ big, no_parking, medium_tourism]) :-  store_size(big), no_parking_spot, tourism(medium).
-output([ big, parking, high_tourism]) :-  store_size(big), parking_spot, tourism(high).
-output([ big, no_parking, high_tourism]) :-  store_size(big), no_parking_spot, tourism(high).
+output([ medium, parking, low_tourism, CB]) :-  store_size(medium), parking_spot, tourism(low), value(customer_base, CB).
+output([ medium, no_parking, low_tourism, CB]) :-  store_size(medium), no_parking_spot, tourism(low), value(customer_base, CB).
+output([ medium, parking, medium_tourism, CB]) :-  store_size(medium), parking_spot, tourism(medium), value(customer_base, CB).
+output([ medium, no_parking, medium_tourism, CB]) :-  store_size(medium), no_parking_spot, tourism(medium), value(customer_base, CB).
+output([ medium, parking, high_tourism, CB]) :-  store_size(medium), parking_spot, tourism(high), value(customer_base, CB).
+output([ medium, no_parking, high_tourism, CB]) :-  store_size(medium), no_parking_spot, tourism(high), value(customer_base, CB).
 
-output([ very_big, parking, low_tourism]) :-  store_size(very_big), parking_spot, tourism(low).
-output([ very_big, no_parking, low_tourism]) :-  store_size(very_big), no_parking_spot, tourism(low).
-output([ very_big, parking, medium_tourism]) :-  store_size(very_big), parking_spot, tourism(medium).
-output([ very_big, no_parking, medium_tourism]) :-  store_size(very_big), no_parking_spot, tourism(medium).
-output([ very_big, parking, high_tourism]) :-  store_size(very_big), parking_spot, tourism(high).
-output([ very_big, no_parking, high_tourism]) :-  store_size(very_big), no_parking_spot, tourism(high).
+output([ big, parking, low_tourism, CB]) :-  store_size(big), parking_spot, tourism(low), value(customer_base, CB).
+output([ big, no_parking, low_tourism, CB]) :-  store_size(big), no_parking_spot, tourism(low), value(customer_base, CB).
+output([ big, parking, medium_tourism, CB]) :-  store_size(big), parking_spot, tourism(medium), value(customer_base, CB).
+output([ big, no_parking, medium_tourism, CB]) :-  store_size(big), no_parking_spot, tourism(medium), value(customer_base, CB).
+output([ big, parking, high_tourism, CB]) :-  store_size(big), parking_spot, tourism(high), value(customer_base, CB).
+output([ big, no_parking, high_tourism, CB]) :-  store_size(big), no_parking_spot, tourism(high), value(customer_base, CB).
+
+output([ very_big, parking, low_tourism, CB]) :-  store_size(very_big), parking_spot, tourism(low), value(customer_base, CB).
+output([ very_big, no_parking, low_tourism, CB]) :-  store_size(very_big), no_parking_spot, tourism(low), value(customer_base, CB).
+output([ very_big, parking, medium_tourism, CB]) :-  store_size(very_big), parking_spot, tourism(medium), value(customer_base, CB).
+output([ very_big, no_parking, medium_tourism, CB]) :-  store_size(very_big), no_parking_spot, tourism(medium), value(customer_base, CB).
+output([ very_big, parking, high_tourism, CB]) :-  store_size(very_big), parking_spot, tourism(high), value(customer_base, CB).
+output([ very_big, no_parking, high_tourism, CB]) :-  store_size(very_big), no_parking_spot, tourism(high), value(customer_base, CB).
 
 
 query(output(_)).
