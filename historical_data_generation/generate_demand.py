@@ -18,7 +18,7 @@ def gen_demand(day_of_week, weather, location, size, parking):
     result = ((1 + 0.2*size) * (1/(day_of_week%7+1)) * location) + weather + parking*2
     return result
 
-node_data = node_parser.parse_node_parameters("data/out/node_parameters.txt")
+node_data = node_parser.parse_node_parameters("../data/out/node_parameters.txt")
 node_data_numerical = []
 
 size = {
@@ -44,7 +44,7 @@ for node in node_data:
     node_data_numerical.append((tourism.get(node[2]), size.get(node[0]), parking.get(node[1])))
 
 def demand_for_shops(n_days):
-    with open("weather_data.csv") as csvfile:
+    with open("../data/in/weather_data.csv") as csvfile:
         shops_matrix = np.zeros((len(node_data),n_days))
         #n_days = 1000 # num of days
         data = csv.reader(csvfile, delimiter=',')
