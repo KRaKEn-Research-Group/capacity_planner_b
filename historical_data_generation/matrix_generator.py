@@ -3,7 +3,7 @@ import math
 import numpy as np
 import pandas as pd
 
-f = open("nodes.json")
+f = open("data/in/nodes.json")
 
 data = json.load(f)
 

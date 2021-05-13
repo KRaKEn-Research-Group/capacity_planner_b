@@ -3,7 +3,7 @@ import datetime
 import random
 import scipy
 import matplotlib.pyplot as plt
-import node_parser
+from tools import node_parser
 import numpy as np
 import pandas as pd
 
@@ -18,7 +18,7 @@ def gen_demand(day_of_week, weather, location, size, parking):
     result = ((1 + 0.2*size) * (1/(day_of_week%7+1)) * location) + weather + parking*2
     return result
 
-node_data = node_parser.parse_node_parameters("node_parameters.txt")
+node_data = node_parser.parse_node_parameters("data/out/node_parameters.txt")
 node_data_numerical = []
 
 size = {
