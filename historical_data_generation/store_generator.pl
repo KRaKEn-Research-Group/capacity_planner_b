@@ -13,9 +13,9 @@
 1::parking_spot ; 0::no_parking_spot :- store_size(very_big).
 
 normal(500, 100)::customer_base :- store_size(very_small).
-normal(1000, 500)::customer_base :- store_size(small).
-normal(5000, 2500)::customer_base :- store_size(medium).
-normal(15000, 7000)::customer_base :- store_size(big).
+normal(1000, 200)::customer_base :- store_size(small).
+normal(5000, 100)::customer_base :- store_size(medium).
+normal(15000, 5000)::customer_base :- store_size(big).
 normal(30000, 10000)::customer_base :- store_size(very_big).
 
 output([ very_small, parking, low_tourism, CB]) :-  store_size(very_small), parking_spot, tourism(low), value(customer_base, CB).
