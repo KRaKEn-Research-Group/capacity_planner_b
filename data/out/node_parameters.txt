@@ -1,399 +1,399 @@
-output([big, parking, low_tourism]).
+output([very_small, no_parking, medium_tourism, 568.4804522806018]).
 ----------------
-output([big, parking, medium_tourism]).
+output([very_small, no_parking, medium_tourism, 516.3931855571501]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([medium, parking, low_tourism, 4351.305053942159]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([small, no_parking, high_tourism, 1801.4184050581885]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([medium, no_parking, low_tourism, 6348.820593632292]).
 ----------------
-output([very_small, parking, medium_tourism]).
+output([small, parking, low_tourism, 1485.5898035369619]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([small, parking, low_tourism, 1545.5997924968801]).
 ----------------
-output([big, parking, medium_tourism]).
+output([medium, parking, medium_tourism, 9058.027060045897]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([big, parking, medium_tourism, 14848.43109272605]).
 ----------------
-output([small, no_parking, medium_tourism]).
+output([medium, parking, high_tourism, 6182.078513811432]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([medium, parking, low_tourism, 7480.682202457689]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([small, parking, low_tourism, -110.62745311015829]).
 ----------------
-output([small, parking, low_tourism]).
+output([medium, parking, low_tourism, 8296.462036436118]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([big, no_parking, low_tourism, 17943.212140952972]).
 ----------------
-output([medium, parking, low_tourism]).
+output([very_small, parking, high_tourism, 433.3161236883807]).
 ----------------
-output([small, parking, low_tourism]).
+output([medium, parking, low_tourism, 216.99428427045768]).
 ----------------
-output([big, no_parking, medium_tourism]).
+output([big, parking, low_tourism, 23179.36701498503]).
 ----------------
-output([big, parking, high_tourism]).
+output([medium, parking, low_tourism, 5673.469193182443]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 568.5947219965001]).
 ----------------
-output([medium, parking, high_tourism]).
+output([medium, no_parking, low_tourism, 5414.127379520375]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([small, no_parking, medium_tourism, 735.2110709287317]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, parking, low_tourism, 7157.781509543691]).
 ----------------
-output([big, parking, medium_tourism]).
+output([medium, parking, medium_tourism, 6238.883281186485]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([medium, no_parking, low_tourism, 6303.782613792085]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([medium, parking, low_tourism, 5228.27474714217]).
 ----------------
-output([big, parking, medium_tourism]).
+output([very_big, parking, low_tourism, 45124.04538698354]).
 ----------------
-output([medium, parking, high_tourism]).
+output([small, parking, low_tourism, 617.6333482979601]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, parking, low_tourism, 5302.630778960082]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, parking, low_tourism, 13195.482251022551]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([medium, no_parking, low_tourism, 9639.803979022556]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, no_parking, medium_tourism, 6696.777739176208]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([small, no_parking, low_tourism, 493.54765958924804]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, parking, medium_tourism, 2891.0153663690107]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([very_big, parking, low_tourism, 40201.48375525701]).
 ----------------
-output([medium, parking, low_tourism]).
+output([small, no_parking, medium_tourism, 673.1770637738675]).
 ----------------
-output([small, parking, low_tourism]).
+output([medium, parking, high_tourism, 7307.322243617198]).
 ----------------
-output([small, no_parking, high_tourism]).
+output([medium, no_parking, low_tourism, 2538.327412151348]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([very_big, parking, low_tourism, 30591.760407077636]).
 ----------------
-output([big, parking, medium_tourism]).
+output([medium, parking, medium_tourism, 2468.9635079766663]).
 ----------------
-output([very_small, no_parking, high_tourism]).
+output([small, no_parking, high_tourism, 1438.798972079158]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([small, parking, low_tourism, 867.5439356563924]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([small, no_parking, low_tourism, 1182.2704479336212]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 6122.29141055668]).
 ----------------
-output([medium, parking, low_tourism]).
+output([small, no_parking, low_tourism, 1400.644528546213]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([medium, no_parking, low_tourism, 9605.813547807611]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([very_small, parking, low_tourism, 619.7306167614333]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([medium, parking, low_tourism, 6229.471719351882]).
 ----------------
-output([very_small, parking, medium_tourism]).
+output([small, no_parking, low_tourism, 21.630099875124756]).
 ----------------
-output([small, parking, medium_tourism]).
+output([medium, no_parking, medium_tourism, 2265.3519429265525]).
 ----------------
-output([very_small, no_parking, medium_tourism]).
+output([big, parking, low_tourism, 15040.908844332613]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([medium, no_parking, low_tourism, 1775.4620656450106]).
 ----------------
-output([very_small, no_parking, high_tourism]).
+output([medium, no_parking, low_tourism, 8617.872415397527]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, no_parking, medium_tourism, 5793.270018365498]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, parking, low_tourism, 3851.4800757357834]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, parking, low_tourism, 6836.349186560189]).
 ----------------
-output([medium, parking, low_tourism]).
+output([big, parking, low_tourism, 12566.903907780823]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([big, parking, low_tourism, 12924.960430050896]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, parking, low_tourism, 1051.4787495351434]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, no_parking, low_tourism, 12228.491991037648]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([medium, no_parking, high_tourism, 740.6796566091671]).
 ----------------
-output([big, parking, low_tourism]).
+output([very_small, no_parking, low_tourism, 580.4703855915366]).
 ----------------
-output([small, no_parking, high_tourism]).
+output([medium, parking, high_tourism, 1921.5577326948728]).
 ----------------
-output([big, parking, low_tourism]).
+output([very_small, no_parking, low_tourism, 548.2900411854608]).
 ----------------
-output([medium, parking, low_tourism]).
+output([big, parking, low_tourism, 21244.81046583531]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 2871.104906941391]).
 ----------------
-output([very_small, no_parking, medium_tourism]).
+output([medium, no_parking, low_tourism, 5592.83042174294]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([medium, parking, low_tourism, 6564.694091373946]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, parking, low_tourism, 1262.8992831260866]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([small, no_parking, medium_tourism, 575.1040192542462]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([medium, parking, low_tourism, -1222.577916072656]).
 ----------------
-output([very_small, parking, low_tourism]).
+output([medium, parking, low_tourism, 4084.2704833633584]).
 ----------------
-output([small, parking, high_tourism]).
+output([medium, parking, low_tourism, 9203.99781478069]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, no_parking, low_tourism, 853.6568938503253]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, parking, low_tourism, 1237.5262933925]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 3709.1347548657245]).
 ----------------
-output([small, no_parking, high_tourism]).
+output([medium, parking, medium_tourism, 4170.283214770199]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, parking, low_tourism, 3236.0928257432333]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, parking, low_tourism, 15941.40407563325]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([very_big, parking, low_tourism, 43304.262540539]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([small, parking, medium_tourism, 632.5071990956553]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([big, parking, low_tourism, 14033.463743920718]).
 ----------------
-output([small, no_parking, medium_tourism]).
+output([big, parking, low_tourism, 25896.620516105806]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, no_parking, medium_tourism, 2173.6765999931235]).
 ----------------
-output([medium, parking, low_tourism]).
+output([very_small, parking, low_tourism, 520.9830625959688]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([very_small, no_parking, low_tourism, 587.8432462025144]).
 ----------------
-output([small, parking, low_tourism]).
+output([very_big, parking, low_tourism, 33988.457091318174]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([very_small, no_parking, low_tourism, 534.3499037683022]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([small, parking, low_tourism, 1695.5169661209595]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([small, no_parking, low_tourism, 836.2358884826708]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([very_small, parking, high_tourism, 549.4931492443202]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, no_parking, low_tourism, 25654.209567500056]).
 ----------------
-output([big, parking, low_tourism]).
+output([very_big, parking, low_tourism, 41978.98684042891]).
 ----------------
-output([small, parking, low_tourism]).
+output([medium, no_parking, high_tourism, 3949.0067727659334]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([small, parking, low_tourism, 2332.8399241752886]).
 ----------------
-output([small, parking, low_tourism]).
+output([medium, parking, low_tourism, 9029.07414128245]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([big, parking, low_tourism, 18567.02119746784]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, parking, low_tourism, 99.47338307681412]).
 ----------------
-output([very_small, no_parking, high_tourism]).
+output([medium, no_parking, medium_tourism, 5752.214927330146]).
 ----------------
-output([medium, no_parking, medium_tourism]).
+output([big, parking, low_tourism, 5058.677113131949]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 7581.850793719039]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, no_parking, medium_tourism, 1215.095630666306]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, parking, low_tourism, 17494.413153540838]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, no_parking, high_tourism, 1204.9924982141558]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([medium, parking, low_tourism, 4166.138321926133]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, no_parking, low_tourism, 6900.511342390751]).
 ----------------
-output([small, parking, high_tourism]).
+output([medium, parking, low_tourism, 4344.563249205573]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([small, no_parking, low_tourism, 154.1633245848143]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, no_parking, low_tourism, -42.86265476415156]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([small, no_parking, medium_tourism, 353.5830513489864]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, parking, low_tourism, 4105.883258324924]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([medium, parking, low_tourism, 2564.0286167271324]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([big, parking, low_tourism, 17584.689091631786]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([very_big, parking, low_tourism, 24660.533520900128]).
 ----------------
-output([small, parking, high_tourism]).
+output([medium, parking, low_tourism, 1934.173783430978]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, parking, low_tourism, 14040.466286273395]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([medium, parking, high_tourism, 3747.9832114925475]).
 ----------------
-output([very_small, no_parking, medium_tourism]).
+output([medium, no_parking, low_tourism, 6984.142935206301]).
 ----------------
-output([medium, parking, low_tourism]).
+output([small, no_parking, medium_tourism, 1483.4963499539783]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, parking, high_tourism, 1173.4141026319005]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([big, parking, low_tourism, 23987.755725644907]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 3110.314711475826]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, parking, low_tourism, 13065.318878007514]).
 ----------------
-output([medium, parking, high_tourism]).
+output([small, parking, high_tourism, 416.4545442428041]).
 ----------------
-output([big, parking, low_tourism]).
+output([very_small, no_parking, low_tourism, 630.6746123219875]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, parking, low_tourism, 7110.259508028621]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([very_big, parking, low_tourism, 38596.318049781265]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 8509.598246077427]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([big, parking, low_tourism, 22302.699199510535]).
 ----------------
-output([big, parking, high_tourism]).
+output([medium, no_parking, low_tourism, 7194.782518917509]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([big, parking, medium_tourism, 18781.622425946876]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, parking, low_tourism, 9781.407251290058]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 4721.737852215534]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([very_small, no_parking, low_tourism, 512.2964104561726]).
 ----------------
-output([big, parking, low_tourism]).
+output([very_big, parking, low_tourism, 38544.321018447685]).
 ----------------
-output([medium, parking, low_tourism]).
+output([small, parking, low_tourism, 1389.4346630570399]).
 ----------------
-output([medium, parking, low_tourism]).
+output([small, no_parking, medium_tourism, 1187.5981288627315]).
 ----------------
-output([medium, parking, low_tourism]).
+output([very_big, parking, low_tourism, 33666.727759693626]).
 ----------------
-output([very_big, parking, medium_tourism]).
+output([very_big, parking, low_tourism, 49871.11914259387]).
 ----------------
-output([big, parking, low_tourism]).
+output([very_small, no_parking, low_tourism, 599.229938362834]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([small, no_parking, low_tourism, -62.742602315651084]).
 ----------------
-output([big, parking, low_tourism]).
+output([very_big, parking, low_tourism, 34796.93128285225]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, parking, low_tourism, 3787.762193455238]).
 ----------------
-output([small, no_parking, medium_tourism]).
+output([medium, no_parking, low_tourism, 6203.606787735272]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([small, parking, medium_tourism, 1510.4626728224898]).
 ----------------
-output([very_big, parking, medium_tourism]).
+output([very_small, no_parking, low_tourism, 522.4439436680814]).
 ----------------
-output([medium, parking, low_tourism]).
+output([very_small, parking, low_tourism, 423.558677859534]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, no_parking, medium_tourism, 275.15101994896384]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([medium, parking, medium_tourism, 5311.102748845237]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([big, parking, low_tourism, 14305.90900875428]).
 ----------------
-output([small, no_parking, medium_tourism]).
+output([small, no_parking, low_tourism, -385.358553986664]).
 ----------------
-output([small, no_parking, medium_tourism]).
+output([medium, parking, low_tourism, 8097.756601249237]).
 ----------------
-output([very_small, parking, medium_tourism]).
+output([big, parking, low_tourism, 26307.810860989386]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([small, no_parking, high_tourism, 558.038099415729]).
 ----------------
-output([small, no_parking, medium_tourism]).
+output([big, parking, low_tourism, 20138.597451654947]).
 ----------------
-output([very_small, no_parking, low_tourism]).
+output([small, no_parking, low_tourism, 473.80314428647455]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, no_parking, medium_tourism, 5499.987522637688]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([very_small, parking, low_tourism, 525.5886846895838]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([big, parking, low_tourism, 9462.545774668404]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, no_parking, high_tourism, 311.31727851673645]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([small, no_parking, medium_tourism, 1188.383587851482]).
 ----------------
-output([medium, no_parking, medium_tourism]).
+output([medium, no_parking, low_tourism, 6258.870194724044]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([big, no_parking, low_tourism, 26818.89673276728]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, parking, medium_tourism, 5383.413368836476]).
 ----------------
-output([medium, no_parking, high_tourism]).
+output([medium, no_parking, low_tourism, 8257.38409280814]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([big, parking, low_tourism, 23153.883686747467]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([medium, parking, low_tourism, 3622.344437975554]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([medium, parking, high_tourism, 2311.3680497704804]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([big, parking, high_tourism, 24638.647424271116]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, parking, low_tourism, 1313.2412258007257]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, parking, low_tourism, 5061.42365705094]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([big, parking, low_tourism, 12396.598515011196]).
 ----------------
-output([big, no_parking, low_tourism]).
+output([small, parking, high_tourism, 1750.852992714408]).
 ----------------
-output([small, no_parking, high_tourism]).
+output([medium, no_parking, high_tourism, 2946.2549991170035]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([big, parking, medium_tourism, 19090.235549518038]).
 ----------------
-output([medium, no_parking, high_tourism]).
+output([small, no_parking, medium_tourism, 974.1402962887913]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([very_small, no_parking, medium_tourism, 535.9769444840838]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([medium, no_parking, high_tourism, 8105.118339331399]).
 ----------------
-output([big, parking, medium_tourism]).
+output([medium, no_parking, low_tourism, 2262.581792991048]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 3692.383139079606]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, parking, low_tourism, 4465.472201531182]).
 ----------------
-output([medium, parking, high_tourism]).
+output([small, no_parking, low_tourism, 249.90442225132313]).
 ----------------
-output([small, no_parking, high_tourism]).
+output([medium, no_parking, low_tourism, 4386.666986810703]).
 ----------------
-output([big, parking, low_tourism]).
+output([big, parking, low_tourism, 17878.691443984007]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, parking, low_tourism, 278.78636011604704]).
 ----------------
-output([big, parking, medium_tourism]).
+output([medium, parking, low_tourism, 4100.714588401622]).
 ----------------
-output([big, parking, low_tourism]).
+output([medium, parking, medium_tourism, 3530.372058397073]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([medium, parking, low_tourism, 2376.2000483843403]).
 ----------------
-output([medium, parking, medium_tourism]).
+output([big, parking, low_tourism, 15317.068800743526]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([medium, no_parking, high_tourism, 3977.265871925583]).
 ----------------
-output([small, no_parking, low_tourism]).
+output([big, no_parking, low_tourism, -3557.433041904551]).
 ----------------
-output([big, parking, low_tourism]).
+output([small, parking, low_tourism, 1213.4545525786261]).
 ----------------
-output([big, parking, low_tourism]).
+output([very_big, parking, low_tourism, 30369.24353696622]).
 ----------------
-output([medium, parking, low_tourism]).
+output([medium, no_parking, low_tourism, 7124.733926332592]).
 ----------------
-output([medium, no_parking, low_tourism]).
+output([big, parking, low_tourism, 15203.458099378286]).
 ----------------
-output([small, parking, low_tourism]).
+output([big, no_parking, low_tourism, 17457.707176113025]).
 ----------------
-output([medium, parking, low_tourism]).
+output([very_small, parking, high_tourism, 568.2467844087744]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([small, no_parking, medium_tourism, 1094.3189190414735]).
 ----------------
-output([medium, parking, low_tourism]).
+output([big, parking, low_tourism, 8695.678424562706]).
 ----------------
-output([very_big, parking, low_tourism]).
+output([very_big, parking, low_tourism, 29707.002754164027]).
 ----------------
-output([medium, parking, high_tourism]).
+output([big, parking, high_tourism, 13654.720266033426]).

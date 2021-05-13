@@ -12,7 +12,7 @@
 0.8::parking_spot ; 0.2::no_parking_spot :- store_size(big).
 1::parking_spot ; 0::no_parking_spot :- store_size(very_big).
 
-normal(500, 300)::customer_base :- store_size(very_small).
+normal(500, 100)::customer_base :- store_size(very_small).
 normal(1000, 500)::customer_base :- store_size(small).
 normal(5000, 2500)::customer_base :- store_size(medium).
 normal(15000, 7000)::customer_base :- store_size(big).
