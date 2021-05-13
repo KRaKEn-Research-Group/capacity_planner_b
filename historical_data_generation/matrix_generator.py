@@ -3,16 +3,20 @@ import math
 import numpy as np
 import pandas as pd
 
-f = open("data/in/nodes.json")
+def generate_time_matrix(path):
 
-data = json.load(f)
+    f = open(path)
 
-matrix = np.zeros((201,201))
+    data = json.load(f)
 
-for a in data['nodes']:
-    for b in data['nodes']:
-        matrix[int(a['-id'])][int(b['-id'])] = math.sqrt((float(b['cx']) - float(a['cx']))**2 
-        + (float(b['cy']) - float(a['cy']))**2)
+    matrix = np.zeros((201,201))
 
-nice = pd.DataFrame(matrix)
-print(nice)
+    for a in data['nodes']:
+        for b in data['nodes']:
+            matrix[int(a['-id'])][int(b['-id'])] = math.sqrt((float(b['cx']) - float(a['cx']))**2
+            + (float(b['cy']) - float(a['cy']))**2)
+
+
+    #nice = pd.DataFrame(matrix)
+    #print(nice)
+    return matrix
