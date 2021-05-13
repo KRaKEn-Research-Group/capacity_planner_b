@@ -288,7 +288,7 @@ output([big, parking, low_tourism, 7517.124821342813]).
 ----------------
 output([medium, parking, low_tourism, 4894.517306623049]).
 ----------------
-output([big, parking, low_tourism, -301.5159034543922]).
+output([big, parking, low_tourism, 301.5159034543922]).
 ----------------
 output([very_big, parking, low_tourism, 35932.61407379756]).
 ----------------
