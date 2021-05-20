@@ -111,7 +111,7 @@ def print_solution(data, manager, routing, solution):
             time_var = time_dimension.CumulVar(index)
             node_index = manager.IndexToNode(index)
             route_load += data['demands'][node_index]
-            plan_output += '\tNode: {0:3}\tLoad: {1:2}\t'.format(node_index, route_load)
+            plan_output += '\tNode: {0:3}\tDemand: {1:2}\t'.format(node_index, data['demands'][node_index])
             plan_output += 'Time: {0:3} - {1:3}\t\tOpen hours: {2:3} - {3:3}\n'.format(
                 solution.Min(time_var),
                 solution.Max(time_var),
@@ -120,13 +120,12 @@ def print_solution(data, manager, routing, solution):
             previous_index = index
             index = solution.Value(routing.NextVar(index))
         time_var = time_dimension.CumulVar(index)
-        plan_output += '\tNode: {0:3}\tLoad: {1:2}\t'.format(manager.IndexToNode(index),
-                                                 route_load)
+        plan_output += '\tNode: {0:3}\tDemand: {1:2}\t'.format(manager.IndexToNode(index), data['demands'][manager.IndexToNode(index)])
         plan_output += 'Time: {0:3} - {1:3}\t\tOpen hours: {2:3} - {3:3}\n'.format(manager.IndexToNode(index),
                                                     solution.Min(time_var),
                                                     solution.Max(time_var),
-                                                    data['time_windows'][node_index][0],
-                                                    data['time_windows'][node_index][1])
+                                                    data['time_windows'][0][1], #???
+                                                    data['time_windows'][0][0])
         plan_output += 'Load of the route: {}\n'.format(route_load)
         plan_output += 'Time of the route: {}\n'.format(
             solution.Min(time_var))
