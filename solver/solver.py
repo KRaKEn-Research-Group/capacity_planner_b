@@ -107,15 +107,15 @@ def print_solution(data, manager, routing, solution):
     needed_vehicles = 0
     for vehicle_id in range(data['num_vehicles']):
         index = routing.Start(vehicle_id)
-        plan_output = 'Route for vehicle {}:\n'.format(vehicle_id)
+        plan_output = 'Route for vehicle {}:\n'.format(needed_vehicles+1)
         route_distance = 0
         route_load = 0
         while not routing.IsEnd(index):
             time_var = time_dimension.CumulVar(index)
             node_index = manager.IndexToNode(index)
             route_load += data['demands'][node_index]
-            plan_output += ' {0} Load({1}) '.format(node_index, route_load)
-            plan_output += 'Time({0},{1}) -> '.format(
+            plan_output += '    Node: {0} Load: {1} '.format(node_index, route_load)
+            plan_output += 'Time: {0} - {1} --->\n'.format(
                 solution.Min(time_var),
                 solution.Max(time_var))
 
@@ -124,13 +124,13 @@ def print_solution(data, manager, routing, solution):
             route_distance += routing.GetArcCostForVehicle(
                 previous_index, index, vehicle_id)
         time_var = time_dimension.CumulVar(index)
-        plan_output += ' {0} Load({1})\n'.format(manager.IndexToNode(index),
+        plan_output += '    Node: {0} Load: {1} '.format(manager.IndexToNode(index),
                                                  route_load)
-        plan_output += 'Distance of the route: {}m\n'.format(route_distance)
-        plan_output += 'Load of the route: {}\n'.format(route_load)
-        plan_output += ' {0} Time({1},{2})\n'.format(manager.IndexToNode(index),
+        plan_output += 'Time: {0} - {1}\n'.format(manager.IndexToNode(index),
                                                     solution.Min(time_var),
                                                     solution.Max(time_var))
+        plan_output += 'Distance of the route: {}m\n'.format(route_distance)
+        plan_output += 'Load of the route: {}\n'.format(route_load)
         plan_output += 'Time of the route: {}min\n'.format(
             solution.Min(time_var))
         if(solution.Min(time_var)==0):
