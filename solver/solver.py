@@ -103,7 +103,7 @@ def print_solution(data, manager, routing, solution):
     total_time = 0
     total_distance = 0
     total_load = 0
-
+    needed_vehicles = 0
     for vehicle_id in range(data['num_vehicles']):
         index = routing.Start(vehicle_id)
         plan_output = 'Route for vehicle {}:\n'.format(vehicle_id)
@@ -132,13 +132,17 @@ def print_solution(data, manager, routing, solution):
                                                     solution.Max(time_var))
         plan_output += 'Time of the route: {}min\n'.format(
             solution.Min(time_var))
+        if(solution.Min(time_var)==0):
+            continue
         print(plan_output)
+        needed_vehicles += 1
         total_time += solution.Min(time_var)
         total_distance += route_distance
         total_load += route_load
     print('Total distance of all routes: {}m'.format(total_distance))
     print('Total load of all routes: {}'.format(total_load))
-    print('Total time of all routes: {}min'.format(total_time))
+    print('Total time of all routes: {}'.format(total_time))
+    print('Vehicle needed: {}'.format(needed_vehicles))
 
 for i in range(data['num_vehicles']):
     routing.AddVariableMinimizedByFinalizer(
