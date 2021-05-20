@@ -21,6 +21,7 @@ def create_data_model():
     data['num_vehicles'] = n
     data['depot'] = 0
     data['demands'] = demand_generator.demand_for_shops(1).T[0][0:n+1] #???
+    data['demands'][0]=0                    #THIS NEEDS TO BE FIXED
     print(sum(data['demands']))
     print( data['demands'])
     data['vehicle_capacities'] = np.ones((1,n), np.int8)[0]*15
