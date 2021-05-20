@@ -20,7 +20,9 @@ def create_data_model():
     data['time_windows'] = time_generator.generate_time_windows(n)
     data['num_vehicles'] = n
     data['depot'] = 0
-    data['demands'] = demand_generator.demand_for_shops(1)[0][0:19]
+    data['demands'] = demand_generator.demand_for_shops(1).T[0][0:n+1] #???
+    print(sum(data['demands']))
+    print( data['demands'])
     data['vehicle_capacities'] = np.ones((1,n), np.int8)[0]*15
 
     return data
@@ -101,6 +103,7 @@ def print_solution(data, manager, routing, solution):
     total_time = 0
     total_distance = 0
     total_load = 0
+
     for vehicle_id in range(data['num_vehicles']):
         index = routing.Start(vehicle_id)
         plan_output = 'Route for vehicle {}:\n'.format(vehicle_id)
@@ -109,21 +112,21 @@ def print_solution(data, manager, routing, solution):
         while not routing.IsEnd(index):
             time_var = time_dimension.CumulVar(index)
             node_index = manager.IndexToNode(index)
-            # route_load += data['demands'][node_index]
-            # plan_output += ' {0} Load({1}) -> '.format(node_index, route_load)
-            plan_output += ' {0} Time({1},{2}) -> '.format(
-                node_index, solution.Min(time_var),
+            route_load += data['demands'][node_index]
+            plan_output += ' {0} Load({1}) '.format(node_index, route_load)
+            plan_output += 'Time({0},{1}) -> '.format(
+                solution.Min(time_var),
                 solution.Max(time_var))
 
-            # previous_index = index
+            previous_index = index
             index = solution.Value(routing.NextVar(index))
-        #     route_distance += routing.GetArcCostForVehicle(
-        #         previous_index, index, vehicle_id)
-        # time_var = time_dimension.CumulVar(index)
-        # plan_output += ' {0} Load({1})\n'.format(manager.IndexToNode(index),
-        #                                          route_load)
-        # plan_output += 'Distance of the route: {}m\n'.format(route_distance)
-        # plan_output += 'Load of the route: {}\n'.format(route_load)
+            route_distance += routing.GetArcCostForVehicle(
+                previous_index, index, vehicle_id)
+        time_var = time_dimension.CumulVar(index)
+        plan_output += ' {0} Load({1})\n'.format(manager.IndexToNode(index),
+                                                 route_load)
+        plan_output += 'Distance of the route: {}m\n'.format(route_distance)
+        plan_output += 'Load of the route: {}\n'.format(route_load)
         plan_output += ' {0} Time({1},{2})\n'.format(manager.IndexToNode(index),
                                                     solution.Min(time_var),
                                                     solution.Max(time_var))
@@ -131,10 +134,10 @@ def print_solution(data, manager, routing, solution):
             solution.Min(time_var))
         print(plan_output)
         total_time += solution.Min(time_var)
-        # total_distance += route_distance
-        # total_load += route_load
-    # print('Total distance of all routes: {}m'.format(total_distance))
-    # print('Total load of all routes: {}'.format(total_load))
+        total_distance += route_distance
+        total_load += route_load
+    print('Total distance of all routes: {}m'.format(total_distance))
+    print('Total load of all routes: {}'.format(total_load))
     print('Total time of all routes: {}min'.format(total_time))
 
 for i in range(data['num_vehicles']):
