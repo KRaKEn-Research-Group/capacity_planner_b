@@ -5,6 +5,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from ortools.constraint_solver import pywrapcp
 from historical_data_generation import matrix_generator
 from tools import time_generator
+from ortools.constraint_solver import routing_enums_pb2
 
 
 
@@ -42,8 +43,8 @@ routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)
 time = 'Time'
 routing.AddDimension(
     transit_callback_index,
-    5,  # allow waiting time
-    9,  # maximum time per vehicle
+    30,  # allow waiting time
+    23,  # maximum time per vehicle
     False,  # Don't force start cumul to zero.
     time)
 time_dimension = routing.GetDimensionOrDie(time)
@@ -65,3 +66,48 @@ for i in range(data['num_vehicles']):
         time_dimension.CumulVar(routing.Start(i)))
     routing.AddVariableMinimizedByFinalizer(
         time_dimension.CumulVar(routing.End(i)))
+
+
+###
+
+def print_solution(data, manager, routing, solution):
+    """Prints solution on console."""
+    print(f'Objective: {solution.ObjectiveValue()}')
+    time_dimension = routing.GetDimensionOrDie('Time')
+    total_time = 0
+    for vehicle_id in range(data['num_vehicles']):
+        index = routing.Start(vehicle_id)
+        plan_output = 'Route for vehicle {}:\n'.format(vehicle_id)
+        while not routing.IsEnd(index):
+            time_var = time_dimension.CumulVar(index)
+            plan_output += '{0} Time({1},{2}) -> '.format(
+                manager.IndexToNode(index), solution.Min(time_var),
+                solution.Max(time_var))
+            index = solution.Value(routing.NextVar(index))
+        time_var = time_dimension.CumulVar(index)
+        plan_output += '{0} Time({1},{2})\n'.format(manager.IndexToNode(index),
+                                                    solution.Min(time_var),
+                                                    solution.Max(time_var))
+        plan_output += 'Time of the route: {}min\n'.format(
+            solution.Min(time_var))
+        print(plan_output)
+        total_time += solution.Min(time_var)
+    print('Total time of all routes: {}min'.format(total_time))
+
+search_parameters = pywrapcp.DefaultRoutingSearchParameters()
+search_parameters.first_solution_strategy = (
+        routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC)
+
+solution = routing.SolveWithParameters(search_parameters)
+
+if solution:
+    print_solution(data, manager, routing, solution)
+else:
+    print('No solution found !')
+
+#
+#     if __name__ == "main":
+#         main()
+
+ # def main():
+#

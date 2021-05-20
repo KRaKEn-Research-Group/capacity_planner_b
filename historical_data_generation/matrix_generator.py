@@ -19,4 +19,4 @@ def generate_time_matrix(path):
 
     #nice = pd.DataFrame(matrix)
     #print(nice)
-    return matrix
+    return matrix.tolist()

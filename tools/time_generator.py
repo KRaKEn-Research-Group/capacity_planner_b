@@ -17,5 +17,5 @@ def generate_time_windows(n):
             rand_period -= (rand_val + rand_period - 24)
         list_of_ranges.append((rand_val,rand_val+rand_period))
     random.shuffle(list_of_ranges)
-    list_of_ranges.insert(0,(0,5))
+    list_of_ranges.insert(0, (0,5))
     return list_of_ranges
