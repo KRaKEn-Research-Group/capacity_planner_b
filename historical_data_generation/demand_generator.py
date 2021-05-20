@@ -18,34 +18,36 @@ def gen_demand(day_of_week, weather, location, size, parking):
     result = ((1 + 0.2*size) * (1/(day_of_week%7+1)) * location) + weather + parking*2
     return result
 
-node_data = node_parser.parse_node_parameters("../data/out/node_parameters.txt")
-node_data_numerical = []
 
-size = {
-    "very_small": 1,
-    "small": 2,
-    "medium": 3,
-    "big": 4,
-    "very_big": 5
-}
-
-parking = {
-    "no_parking": 0,
-    "parking": 1,
-}
-
-tourism = {
-    "low_tourism": 1,
-    "medium_tourism": 2,
-    "high_tourism": 3
-}
-
-for node in node_data:
-    node_data_numerical.append((tourism.get(node[2]), size.get(node[0]), parking.get(node[1])))
 
 def demand_for_shops(n_days):
-    with open("../data/in/weather_data.csv") as csvfile:
-        shops_matrix = np.zeros((len(node_data),n_days))
+    node_data = node_parser.parse_node_parameters("data/out/node_parameters.txt")
+    node_data_numerical = []
+
+    size = {
+        "very_small": 1,
+        "small": 2,
+        "medium": 3,
+        "big": 4,
+        "very_big": 5
+    }
+
+    parking = {
+        "no_parking": 0,
+        "parking": 1,
+    }
+
+    tourism = {
+        "low_tourism": 1,
+        "medium_tourism": 2,
+        "high_tourism": 3
+    }
+
+    for node in node_data:
+        node_data_numerical.append((tourism.get(node[2]), size.get(node[0]), parking.get(node[1])))
+
+    with open("data/in/weather_data.csv") as csvfile:
+        shops_matrix = np.zeros((len(node_data),n_days), np.int8)
         #n_days = 1000 # num of days
         data = csv.reader(csvfile, delimiter=',')
         data = list(data)
@@ -62,7 +64,7 @@ def demand_for_shops(n_days):
                 # rand_size = random.randint(1,5)
                 # rand_event = random.choice([1,2,3])
                 demand = gen_demand(quali[0],quali[1],node[0], node[1], node[2])
-                shops_matrix[i][day_count] = demand
+                shops_matrix[i][day_count] = int(round(demand))
                 day_count+=1
                 # if day_count == n_days:
                 #     break
@@ -74,9 +76,10 @@ def demand_for_shops(n_days):
     # print(demands)
     #plt.hist(demands)
 
-result = demand_for_shops(1000)
-nice = pd.DataFrame(result)
-print(nice)
+
+
+# result = demand_for_shops(1000)
+# print(result)
 
 
 # SIZE, PARKING, TOURISM, WEATHER, EVENT, DAY OF THE WEEK

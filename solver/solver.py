@@ -4,6 +4,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from ortools.constraint_solver import pywrapcp
 from historical_data_generation import matrix_generator
+from historical_data_generation import demand_generator
 from tools import time_generator
 from ortools.constraint_solver import routing_enums_pb2
 
@@ -12,17 +13,22 @@ from ortools.constraint_solver import routing_enums_pb2
 def create_data_model():
     """Stores the data for the problem."""
     data = {}
-
-    time_matrix = matrix_generator.generate_time_matrix("data/in/nodes.json")
+    n = 20
+    time_matrix = matrix_generator.generate_time_matrix("data/in/nodes.json", n)
 
     data['time_matrix'] = time_matrix
-    data['time_windows'] = time_generator.generate_time_windows(200)
-    data['num_vehicles'] = 200
+    data['time_windows'] = time_generator.generate_time_windows(n)
+    data['num_vehicles'] = n
     data['depot'] = 0
+    data['demands'] = demand_generator.demand_for_shops(1)[0][0:19]
+    data['vehicle_capacities'] = np.ones((1,n), np.int8)[0]*15
 
     return data
 
+
 data = create_data_model()
+# print(data['time_windows'])
+# print(data['time_matrix'])
 manager = pywrapcp.RoutingIndexManager(len(data['time_matrix']), data['num_vehicles'], data['depot'])
 routing = pywrapcp.RoutingModel(manager)
 
@@ -40,11 +46,12 @@ routing.SetArcCostEvaluatorOfAllVehicles(transit_callback_index)
 
 ###
 
+
 time = 'Time'
 routing.AddDimension(
     transit_callback_index,
-    30,  # allow waiting time
-    23,  # maximum time per vehicle
+    7*6,  # allow waiting time
+    23*6,  # maximum time per vehicle
     False,  # Don't force start cumul to zero.
     time)
 time_dimension = routing.GetDimensionOrDie(time)
@@ -70,33 +77,78 @@ for i in range(data['num_vehicles']):
 
 ###
 
+def demand_callback(from_index):
+    """Returns the demand of the node."""
+    # Convert from routing variable Index to demands NodeIndex.
+    from_node = manager.IndexToNode(from_index)
+    return data['demands'][from_node]
+
+demand_callback_index = routing.RegisterUnaryTransitCallback(
+    demand_callback)
+routing.AddDimensionWithVehicleCapacity(
+    demand_callback_index,
+    0,  # null capacity slack
+    data['vehicle_capacities'],  # vehicle maximum capacities
+    True,  # start cumul to zero
+    'Capacity')
+
+###
+
 def print_solution(data, manager, routing, solution):
     """Prints solution on console."""
     print(f'Objective: {solution.ObjectiveValue()}')
     time_dimension = routing.GetDimensionOrDie('Time')
     total_time = 0
+    total_distance = 0
+    total_load = 0
     for vehicle_id in range(data['num_vehicles']):
         index = routing.Start(vehicle_id)
         plan_output = 'Route for vehicle {}:\n'.format(vehicle_id)
+        route_distance = 0
+        route_load = 0
         while not routing.IsEnd(index):
             time_var = time_dimension.CumulVar(index)
-            plan_output += '{0} Time({1},{2}) -> '.format(
-                manager.IndexToNode(index), solution.Min(time_var),
+            node_index = manager.IndexToNode(index)
+            # route_load += data['demands'][node_index]
+            # plan_output += ' {0} Load({1}) -> '.format(node_index, route_load)
+            plan_output += ' {0} Time({1},{2}) -> '.format(
+                node_index, solution.Min(time_var),
                 solution.Max(time_var))
+
+            # previous_index = index
             index = solution.Value(routing.NextVar(index))
-        time_var = time_dimension.CumulVar(index)
-        plan_output += '{0} Time({1},{2})\n'.format(manager.IndexToNode(index),
+        #     route_distance += routing.GetArcCostForVehicle(
+        #         previous_index, index, vehicle_id)
+        # time_var = time_dimension.CumulVar(index)
+        # plan_output += ' {0} Load({1})\n'.format(manager.IndexToNode(index),
+        #                                          route_load)
+        # plan_output += 'Distance of the route: {}m\n'.format(route_distance)
+        # plan_output += 'Load of the route: {}\n'.format(route_load)
+        plan_output += ' {0} Time({1},{2})\n'.format(manager.IndexToNode(index),
                                                     solution.Min(time_var),
                                                     solution.Max(time_var))
         plan_output += 'Time of the route: {}min\n'.format(
             solution.Min(time_var))
         print(plan_output)
         total_time += solution.Min(time_var)
+        # total_distance += route_distance
+        # total_load += route_load
+    # print('Total distance of all routes: {}m'.format(total_distance))
+    # print('Total load of all routes: {}'.format(total_load))
     print('Total time of all routes: {}min'.format(total_time))
+
+for i in range(data['num_vehicles']):
+    routing.AddVariableMinimizedByFinalizer(
+        time_dimension.CumulVar(routing.Start(i)))
+    routing.AddVariableMinimizedByFinalizer(
+        time_dimension.CumulVar(routing.End(i)))
 
 search_parameters = pywrapcp.DefaultRoutingSearchParameters()
 search_parameters.first_solution_strategy = (
         routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC)
+search_parameters.local_search_metaheuristic = (
+        routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH)
+search_parameters.time_limit.FromSeconds(1)
 
 solution = routing.SolveWithParameters(search_parameters)
 
@@ -104,10 +156,3 @@ if solution:
     print_solution(data, manager, routing, solution)
 else:
     print('No solution found !')
-
-#
-#     if __name__ == "main":
-#         main()
-
- # def main():
-#
