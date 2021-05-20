@@ -1,4 +1,7 @@
 import numpy as np
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from ortools.constraint_solver import pywrapcp
 from historical_data_generation import matrix_generator
 from tools import time_generator
@@ -9,7 +12,7 @@ def create_data_model():
     """Stores the data for the problem."""
     data = {}
 
-    time_matrix = matrix_generator.generate_time_matrix("../data/in/nodes.json")
+    time_matrix = matrix_generator.generate_time_matrix("data/in/nodes.json")
 
     data['time_matrix'] = time_matrix
     data['time_windows'] = time_generator.generate_time_windows(200)
