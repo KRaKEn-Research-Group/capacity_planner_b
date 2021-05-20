@@ -22,8 +22,6 @@ def create_data_model():
     data['depot'] = 0
     data['demands'] = demand_generator.demand_for_shops(1).T[0][0:n+1] #???
     data['demands'][0]=0                    #THIS NEEDS TO BE FIXED
-    print(sum(data['demands']))
-    print( data['demands'])
     data['vehicle_capacities'] = np.ones((1,n), np.int8)[0]*15
 
     return data
@@ -108,7 +106,6 @@ def print_solution(data, manager, routing, solution):
     for vehicle_id in range(data['num_vehicles']):
         index = routing.Start(vehicle_id)
         plan_output = 'Route for vehicle {}:\n'.format(needed_vehicles+1)
-        route_distance = 0
         route_load = 0
         while not routing.IsEnd(index):
             time_var = time_dimension.CumulVar(index)
@@ -118,32 +115,28 @@ def print_solution(data, manager, routing, solution):
             plan_output += 'Time: {0} - {1} --->\n'.format(
                 solution.Min(time_var),
                 solution.Max(time_var))
-
             previous_index = index
             index = solution.Value(routing.NextVar(index))
-            route_distance += routing.GetArcCostForVehicle(
-                previous_index, index, vehicle_id)
         time_var = time_dimension.CumulVar(index)
         plan_output += '    Node: {0} Load: {1} '.format(manager.IndexToNode(index),
                                                  route_load)
         plan_output += 'Time: {0} - {1}\n'.format(manager.IndexToNode(index),
                                                     solution.Min(time_var),
                                                     solution.Max(time_var))
-        plan_output += 'Distance of the route: {}m\n'.format(route_distance)
         plan_output += 'Load of the route: {}\n'.format(route_load)
-        plan_output += 'Time of the route: {}min\n'.format(
+        plan_output += 'Time of the route: {}\n'.format(
             solution.Min(time_var))
         if(solution.Min(time_var)==0):
             continue
         print(plan_output)
         needed_vehicles += 1
         total_time += solution.Min(time_var)
-        total_distance += route_distance
         total_load += route_load
-    print('Total distance of all routes: {}m'.format(total_distance))
-    print('Total load of all routes: {}'.format(total_load))
+    print('=============================================')
+    print('Vehicles needed: {}'.format(needed_vehicles))
     print('Total time of all routes: {}'.format(total_time))
-    print('Vehicle needed: {}'.format(needed_vehicles))
+    print('Total load of all routes: {}'.format(total_load))
+    print('=============================================')
 
 for i in range(data['num_vehicles']):
     routing.AddVariableMinimizedByFinalizer(
