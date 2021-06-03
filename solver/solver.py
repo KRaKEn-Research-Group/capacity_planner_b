@@ -9,11 +9,10 @@ from tools import time_generator
 from ortools.constraint_solver import routing_enums_pb2
 
 
-
+n = 20
 def create_data_model():
     """Stores the data for the problem."""
     data = {}
-    n = 100
     time_matrix = matrix_generator.generate_time_matrix("data/in/nodes.json", n)
 
     data['time_matrix'] = time_matrix
@@ -56,12 +55,16 @@ routing.AddDimension(
     False,  # Don't force start cumul to zero.
     time)
 time_dimension = routing.GetDimensionOrDie(time)
+for i in range(n):
+    time_dimension.SetSpanUpperBoundForVehicle(9*6, i)
 # Add time window constraints for each location except depot.
 for location_idx, time_window in enumerate(data['time_windows']):
     if location_idx == data['depot']:
         continue
     index = manager.NodeToIndex(location_idx)
     time_dimension.CumulVar(index).SetRange(time_window[0], time_window[1])
+
+
 # Add time window constraints for each vehicle start node.
 depot_idx = data['depot']
 for vehicle_id in range(data['num_vehicles']):
