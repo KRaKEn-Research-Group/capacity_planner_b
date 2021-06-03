@@ -48,7 +48,7 @@ def gen_demand(day_of_the_week, weather, tourism, size, parking, population):
 
 
 
-def demand_for_shops(n_days):
+def demand_for_shops(date):
     node_data = node_parser.parse_node_parameters("data/out/node_parameters.txt")
     node_data_numerical = []
 
@@ -75,27 +75,29 @@ def demand_for_shops(n_days):
         node_data_numerical.append((tourism.get(node[2]), size.get(node[0]), parking.get(node[1]), int(round(float(node[3])))))
 
     with open("data/in/weather_data.csv") as csvfile:
-        shops_matrix = np.zeros((len(node_data),n_days), np.int64)
+        shops_matrix = np.zeros((len(node_data),1), np.int64)
         #n_days = 1000 # num of days
-        data = csv.reader(csvfile, delimiter=',')
-        data = list(data)
+        for row in csv.reader(csvfile, delimiter=','):
+            if row[0] == date[0] and row[1] == date[1] and row[2] == date[2]:
+                weather_data = list(row)
+                break
         
         for i in range(len(node_data_numerical)):
             node = node_data_numerical[i]
             day_count=0
-            for day in data[1:n_days+1]:
+            
                 # if day_count==0:
                 #     day_count+=1
                 #     continue
-                quali = weather_quality(day)
+            quali = weather_quality(weather_data)
                 # rand_location = random.randrange(0, 200)/100
                 # rand_size = random.randint(1,5)
                 # rand_event = random.choice([1,2,3])
-                demand = gen_demand(quali[0],quali[1],node[0], node[1], node[2], node[3])
-                if demand < 0:
-                    print("wtf ", demand)
-                shops_matrix[i][day_count] = abs(int(round(demand)))
-                day_count+=1
+            demand = gen_demand(quali[0],quali[1],node[0], node[1], node[2], node[3])
+            if demand < 0:
+                print("wtf ", demand)
+            shops_matrix[i][day_count] = abs(int(round(demand)))
+            day_count+=1
                 # if day_count == n_days:
                 #     break
         # print(shops_matrix)
