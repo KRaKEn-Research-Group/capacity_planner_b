@@ -13,7 +13,7 @@ from ortools.constraint_solver import routing_enums_pb2
 def create_data_model():
     """Stores the data for the problem."""
     data = {}
-    n = 20
+    n = 100
     time_matrix = matrix_generator.generate_time_matrix("data/in/nodes.json", n)
 
     data['time_matrix'] = time_matrix
@@ -22,7 +22,7 @@ def create_data_model():
     data['depot'] = 0
     data['demands'] = demand_generator.demand_for_shops(1).T[0][0:n+1] #???
     data['demands'][0]=0                    #THIS NEEDS TO BE FIXED
-    data['vehicle_capacities'] = np.ones((1,n), np.int8)[0]*15
+    data['vehicle_capacities'] = np.ones((1,n), np.int64)[0]*max(data['demands'])
 
     return data
 
