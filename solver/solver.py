@@ -16,11 +16,12 @@ def create_data_model(date, n):
 
     data['time_matrix'] = time_matrix
     data['time_windows'] = time_generator.generate_time_windows(n)
-    data['num_vehicles'] = n
+    data['num_vehicles'] = n*2
     data['depot'] = 0
     data['demands'] = demand_generator.demand_for_shops(date).T[0][0:n+1] #???
     data['demands'][0]=0                    #THIS NEEDS TO BE FIXED
-    data['vehicle_capacities'] = np.ones((1,n), np.int64)[0]*max(data['demands'])
+    #data['vehicle_capacities'] = np.ones((1,n), np.int64)[0]*max(data['demands'])
+    data['vehicle_capacities'] = np.ones((1,n*2), np.int64)[0]*10000
 
     return data
 
@@ -86,19 +87,12 @@ def print_solution(data, manager, routing, solution):
         plan_output += 'Load of the route: {}\n'.format(route_load)
         plan_output += 'Time of the route: {}\n'.format(
             solution.Min(time_var))
-
-        total_load += route_load
-        total_time += solution.Min(time_var)
-        if total_load == 0:
-            continue
-
         if(solution.Min(time_var)==0):
             continue
-
+        print(plan_output)
         needed_vehicles += 1
-
-
-
+        total_time += solution.Min(time_var)
+        total_load += route_load
     print('=============================================')
     print('Vehicles needed: {}'.format(needed_vehicles))
     print('Total time of all routes: {}'.format(total_time))
@@ -106,18 +100,6 @@ def print_solution(data, manager, routing, solution):
     print('=============================================')
     return(needed_vehicles)
 
-def time_callback(from_index, to_index):
-    """Returns the travel time between the two nodes."""
-    # Convert from routing variable Index to time matrix NodeIndex.
-    from_node = manager.IndexToNode(from_index)
-    to_node = manager.IndexToNode(to_index)
-    return data['time_matrix'][from_node][to_node]
-
-def demand_callback(from_index):
-    """Returns the demand of the node."""
-    # Convert from routing variable Index to demands NodeIndex.
-    from_node = manager.IndexToNode(from_index)
-    return data['demands'][from_node]
 
 # n = 20
 # date = ("2020","08","18")
@@ -208,7 +190,20 @@ def demand_callback(from_index):
 
 
 
-def solve_date(date,n):
+def solve_date(date,n,print_switch=False):
+
+    def time_callback(from_index, to_index):
+        """Returns the travel time between the two nodes."""
+        # Convert from routing variable Index to time matrix NodeIndex.
+        from_node = manager.IndexToNode(from_index)
+        to_node = manager.IndexToNode(to_index)
+        return data['time_matrix'][from_node][to_node]
+
+    def demand_callback(from_index):
+        """Returns the demand of the node."""
+        # Convert from routing variable Index to demands NodeIndex.
+        from_node = manager.IndexToNode(from_index)
+        return data['demands'][from_node]
 
     data = create_data_model(date, n)
     # print(data['time_windows'])
@@ -286,7 +281,11 @@ def solve_date(date,n):
     solution = routing.SolveWithParameters(search_parameters)
 
     if solution:
-        result = return_solution(data, manager, routing, solution)
+        if print_switch:
+            result = print_solution(data, manager, routing, solution)
+        else:
+            result = return_solution(data, manager, routing, solution)
+
     else:
         print('No solution found !')
         result = 10000
