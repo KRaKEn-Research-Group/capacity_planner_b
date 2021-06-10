@@ -24,6 +24,33 @@ def create_data_model(date, n):
 
     return data
 
+def return_solution(data, manager, routing, solution):
+    """Prints solution on console."""
+    print(f'Objective: {solution.ObjectiveValue()}')
+    time_dimension = routing.GetDimensionOrDie('Time')
+    total_time = 0
+    total_distance = 0
+    total_load = 0
+    needed_vehicles = 0
+    for vehicle_id in range(data['num_vehicles']):
+        index = routing.Start(vehicle_id)
+        route_load = 0
+        while not routing.IsEnd(index):
+            time_var = time_dimension.CumulVar(index)
+            node_index = manager.IndexToNode(index)
+            route_load += data['demands'][node_index]
+            previous_index = index
+            index = solution.Value(routing.NextVar(index))
+        time_var = time_dimension.CumulVar(index)
+        total_load += route_load
+        total_time += solution.Min(time_var)
+        if total_load == 0:
+            continue
+
+        if(solution.Min(time_var)==0):
+            continue
+        needed_vehicles += 1
+    return(needed_vehicles)
 
 def print_solution(data, manager, routing, solution):
     """Prints solution on console."""
@@ -59,12 +86,19 @@ def print_solution(data, manager, routing, solution):
         plan_output += 'Load of the route: {}\n'.format(route_load)
         plan_output += 'Time of the route: {}\n'.format(
             solution.Min(time_var))
+
+        total_load += route_load
+        total_time += solution.Min(time_var)
+        if total_load == 0:
+            continue
+
         if(solution.Min(time_var)==0):
             continue
-        print(plan_output)
+
         needed_vehicles += 1
-        total_time += solution.Min(time_var)
-        total_load += route_load
+
+
+
     print('=============================================')
     print('Vehicles needed: {}'.format(needed_vehicles))
     print('Total time of all routes: {}'.format(total_time))
@@ -252,7 +286,7 @@ def solve_date(date,n):
     solution = routing.SolveWithParameters(search_parameters)
 
     if solution:
-        result = print_solution(data, manager, routing, solution)
+        result = return_solution(data, manager, routing, solution)
     else:
         print('No solution found !')
         result = 10000
