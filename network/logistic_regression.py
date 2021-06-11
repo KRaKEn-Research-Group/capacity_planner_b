@@ -18,6 +18,7 @@ from sklearn.datasets import make_classification
 from sklearn.metrics import plot_confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
+from sklearn.metrics import mean_squared_error
 
 def prepare_targets(y_train, y_test):
 	le = LabelEncoder()
@@ -80,12 +81,13 @@ else:
 
     X_train, X_test = prepare_inputs(X_train, X_test)
 
-    model = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(7, 5), random_state=1)
-    #model = LogisticRegression(solver='liblinear', random_state=0)
+    #model = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(100, 50), random_state=1)
+    model = LogisticRegression()
     model.fit(X_train,y_train)
     print(model.predict_proba(X_test))
     print(model.predict(X_test))
-    print(model.score(X_test, y_test))
+    #print(model.score(X_train,y_train))
+    print(mean_squared_error(y_train,model.predict(X_train)))
 
     #plot_confusion_matrix(model, X_test, y_test)  
     #plt.show()  
