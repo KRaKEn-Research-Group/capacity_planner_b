@@ -16,12 +16,12 @@ def create_data_model(date, n):
 
     data['time_matrix'] = time_matrix
     data['time_windows'] = time_generator.generate_time_windows(n)
-    data['num_vehicles'] = n*2
+    data['num_vehicles'] = n
     data['depot'] = 0
     data['demands'] = demand_generator.demand_for_shops(date).T[0][0:n+1] #???
     data['demands'][0]=0                    #THIS NEEDS TO BE FIXED
-    data['vehicle_capacities'] = np.ones((1,n), np.int64)[0]*max(data['demands'])
-    #data['vehicle_capacities'] = np.ones((1,n*2), np.int64)[0]*10000
+    data['vehicle_capacities'] = np.ones((1,n), np.int64)[0]*32
+    #data['vehicle_capacities'] = np.ones((1,n*2), np.int64)[0]*32
 
     return data
 

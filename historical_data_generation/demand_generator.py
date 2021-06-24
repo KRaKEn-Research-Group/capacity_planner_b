@@ -44,7 +44,29 @@ def gen_demand(day_of_the_week, weather, tourism, size, parking, population):
         print("population: ", population)
         print("tourism: ", tourism)
         print("result: ", result)
-    return result
+
+    if result == 0:
+        bucket_result = 0
+
+    elif 100 > result > 0:
+        bucket_result = 1
+
+    elif 500 > result >= 100:
+        bucket_result = 2
+
+    elif 2000 > result >= 500:
+        bucket_result = 4
+
+    elif 5000 > result >= 2000:
+        bucket_result = 8
+
+    elif 10000 > result >= 5000:
+        bucket_result = 16
+
+    else:
+        bucket_result = 32
+
+    return bucket_result
 
 
 
@@ -94,8 +116,7 @@ def demand_for_shops(date):
                 # rand_size = random.randint(1,5)
                 # rand_event = random.choice([1,2,3])
             demand = gen_demand(quali[0],quali[1],node[0], node[1], node[2], node[3])
-            if demand < 0:
-                print("wtf ", demand)
+
             shops_matrix[i][day_count] = abs(int(round(demand)))
             day_count+=1
                 # if day_count == n_days:

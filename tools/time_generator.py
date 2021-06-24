@@ -47,6 +47,8 @@ def generate_time_windows(n):
         if node[1] == "parking":
             list_of_ranges.append((24,144))
         else:
-            rand_val = random.randint(24,96)
-            list_of_ranges.append((rand_val,rand_val+6))
+            #rand_val = random.randint(24,96)
+            #list_of_ranges.append((rand_val,rand_val+6))
+            list_of_ranges.append((30,42))
+
     return list_of_ranges[0:n+1]
